@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ingress-nginx-endpoint-slice-reader-binding
+subjects:
+- kind: ServiceAccount
+  name: ingress-nginx
+  namespace: ingress-nginx
+roleRef:
+  kind: ClusterRole
+  name: ingress-nginx-endpoint-slice-reader
+  apiGroup: rbac.authorization.k8s.io
